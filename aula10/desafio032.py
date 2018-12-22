@@ -1,4 +1,5 @@
 # imports
+from datetime import datetime
 
 print("""
 |*****************|
@@ -7,8 +8,11 @@ print("""
 """)
 print("Ano bissexto?")
 
-ano = int(input("Digite um ano: "))
+ano = int(input("Digite um ano (digite 0 para considerar o atual): "))
 retorno = ""
+
+if ano == 0:
+    ano = datetime.now().year
 
 print()
 if ano % 4 == 0:
@@ -24,7 +28,5 @@ else:
         retorno = "O ano de " + str(ano) + " é bissexto!"
     else:
         retorno = "O ano de " + str(ano) + " não é bissexto!"
-
-
 
 print(retorno)
