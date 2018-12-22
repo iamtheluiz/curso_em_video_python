@@ -13,16 +13,23 @@ l3 = float(input("Digite o valor do terceiro lado do triângulo: "))
 
 print(l1 + l3)
 
-if (l1 + l2) > l3:
-    if (l1 + l3) > l2:
-        if (l2 + l3) > l1:
-            existe = True
-        else:
-            existe = False
-    else:
-        existe = False
+# Formato da Correção
+if (l1 + l2) > l3 and (l1 + l3) > l2 and (l2 + l3) > l1:
+    existe = True
 else:
     existe = False
+
+# Formato Antigo:
+# if (l1 + l2) > l3:
+#    if (l1 + l3) > l2:
+#        if (l2 + l3) > l1:
+#            existe = True
+#        else:
+#            existe = False
+#    else:
+#        existe = False
+#else:
+#    existe = False
 
 if existe:
     print("As retas de tamanho {}, {} e {} podem formar um triângulo!".format(l1, l2, l3))
